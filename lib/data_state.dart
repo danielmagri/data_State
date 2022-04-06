@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 library data_state;
 
 import 'package:flutter/material.dart' show SizedBox, Widget;
@@ -16,16 +18,16 @@ typedef _ErrorReactionCallback<E> = void Function(E error);
 
 enum StateType { success, loading, error }
 
-typedef DataStateCustom<T, E> = DataStateBase<T, E>;
-typedef DataState<T> = DataStateBase<T, dynamic>;
+typedef DataStateCustom<T, E> = _DataStateCore<T, E>;
+typedef DataState<T> = _DataStateCore<T, dynamic>;
 
-class DataStateBase<T, E> extends _DataStateBase<T, E> with _$DataState {
-  DataStateBase() : super(initialState: StateType.loading);
+class _DataStateCore<T, E> extends _DataStateBase<T, E> with _$_DataStateCore {
+  _DataStateCore() : super(initialState: StateType.loading);
 
-  DataStateBase.startWithSuccess({required T data})
+  _DataStateCore.startWithSuccess({required T data})
       : super(initialState: StateType.success, initialData: data);
 
-  DataStateBase.startWithError({required error})
+  _DataStateCore.startWithError({required error})
       : super(initialState: StateType.error, initialError: error);
 }
 
@@ -50,7 +52,7 @@ abstract class _DataStateBase<T, E> with Store {
   E? get error => _error;
 
   @action
-  void setLoadingState([bool loading = true]) {
+  void setLoadingState() {
     _state = StateType.loading;
   }
 
