@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:data_state/data_state.dart';
+import 'package:data_state_mobx/data_state.dart';
 import 'test_widget_sample.dart';
 
 void main() {

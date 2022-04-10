@@ -1,4 +1,4 @@
-import 'package:data_state/data_state.dart';
+import 'package:data_state_mobx/data_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
