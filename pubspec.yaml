@@ -1,5 +1,5 @@
 name: data_state
-description: A new Flutter package project.
+description: A powerful state machine for MobX management, which can be used in almost any application state.
 version: 0.0.1
 homepage: https://github.com/danielmagri/data_state
 

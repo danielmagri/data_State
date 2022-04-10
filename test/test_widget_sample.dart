@@ -15,15 +15,20 @@ class TestWidgetHandleState extends StatelessWidget {
     return MaterialApp(
       title: 'DataState Demo',
       home: Scaffold(
-          body: Observer(
-        builder: (context) => dataState.handleState(loading: () {
-          return const Text('Loading');
-        }, success: (data) {
-          return const Text('Success');
-        }, error: (error) {
-          return const Text('Error');
-        }),
-      )),
+        body: Observer(
+          builder: (context) => dataState.handleState(
+            loading: () {
+              return const Text('Loading');
+            },
+            success: (data) {
+              return const Text('Success');
+            },
+            error: (error) {
+              return const Text('Error');
+            },
+          ),
+        ),
+      ),
     );
   }
 }
@@ -41,16 +46,20 @@ class TestWidgetHandleStateLoadableWithData extends StatelessWidget {
     return MaterialApp(
       title: 'DataState Demo',
       home: Scaffold(
-          body: Observer(
-        builder: (context) =>
-            dataState.handleStateLoadableWithData(loading: (data) {
-          return const Text('Loading');
-        }, success: (data) {
-          return const Text('Success');
-        }, error: (error) {
-          return const Text('Error');
-        }),
-      )),
+        body: Observer(
+          builder: (context) => dataState.handleStateLoadableWithData(
+            loading: (data) {
+              return const Text('Loading');
+            },
+            success: (data) {
+              return const Text('Success');
+            },
+            error: (error) {
+              return const Text('Error');
+            },
+          ),
+        ),
+      ),
     );
   }
 }
@@ -68,15 +77,20 @@ class TestWidgetHandleStateCustom extends StatelessWidget {
     return MaterialApp(
       title: 'DataState Demo',
       home: Scaffold(
-          body: Observer(
-        builder: (context) => dataState.handleState(loading: () {
-          return const Text('Loading');
-        }, success: (data) {
-          return const Text('Success');
-        }, error: (error) {
-          return const Text('Error');
-        }),
-      )),
+        body: Observer(
+          builder: (context) => dataState.handleState(
+            loading: () {
+              return const Text('Loading');
+            },
+            success: (data) {
+              return const Text('Success');
+            },
+            error: (error) {
+              return const Text('Error');
+            },
+          ),
+        ),
+      ),
     );
   }
 }
@@ -94,16 +108,20 @@ class TestWidgetHandleStateLoadableWithDataCustom extends StatelessWidget {
     return MaterialApp(
       title: 'DataState Demo',
       home: Scaffold(
-          body: Observer(
-        builder: (context) =>
-            dataState.handleStateLoadableWithData(loading: (data) {
-          return const Text('Loading');
-        }, success: (data) {
-          return const Text('Success');
-        }, error: (error) {
-          return const Text('Error');
-        }),
-      )),
+        body: Observer(
+          builder: (context) => dataState.handleStateLoadableWithData(
+            loading: (data) {
+              return const Text('Loading');
+            },
+            success: (data) {
+              return const Text('Success');
+            },
+            error: (error) {
+              return const Text('Error');
+            },
+          ),
+        ),
+      ),
     );
   }
 }
