@@ -4,7 +4,7 @@ import 'test_widget_sample.dart';
 
 void main() {
   const delay = Duration(milliseconds: 100);
-  
+
   group('Using DataState', () {
     group('starting with loading state', () {
       test('validate the initial state', () {

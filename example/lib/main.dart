@@ -66,8 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const ReactionPage()),
+                  MaterialPageRoute(builder: (context) => const ReactionPage()),
                 );
               },
               child: const Text('States using reaction'),

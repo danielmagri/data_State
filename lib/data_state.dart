@@ -27,18 +27,18 @@ class _DataStateCore<T, E> extends _DataStateBase<T, E> with _$_DataStateCore {
   /// To start with `success` or `error` state use these constructors:
   /// - [DataState.startWithSuccess]
   /// - [DataState.startWithError]
-  /// 
+  ///
   /// Use the `DataStateCustom<T, E>` to define a error type.
   _DataStateCore() : super(initialState: StateType.loading);
 
   /// Starts with `success` state.
-  /// 
+  ///
   /// Set an initial data at [data]
   _DataStateCore.startWithSuccess({required T data})
       : super(initialState: StateType.success, initialData: data);
 
   /// Starts with `error` state.
-  /// 
+  ///
   /// Set an initial error at [error]
   _DataStateCore.startWithError({required error})
       : super(initialState: StateType.error, initialError: error);
@@ -85,9 +85,9 @@ abstract class _DataStateBase<T, E> with Store {
   }
 
   /// Set a callback for each state returning the widget desired for the state. Use this method inside the `Observer` widget or similar.
-  /// 
+  ///
   /// Use the [handleStateLoadableWithData] if need to use the *data* at loading state, for example on an infinite list.
-  /// 
+  ///
   /// If not set a callback for [error] the defaults value is a `SizedBox`.
   /// ```dart
   ///Observer(
@@ -124,7 +124,7 @@ abstract class _DataStateBase<T, E> with Store {
   }
 
   /// Set a callback for each state returning the widget desired for the state, the difference of [handleState] is that the loading state takes *data* as parameter. Use this method inside the `Observer` widget or similar.
-  /// 
+  ///
   /// If not set a callback for [error] the defaults value is a `SizedBox`.
   /// ```dart
   ///Observer(
@@ -161,7 +161,7 @@ abstract class _DataStateBase<T, E> with Store {
   }
 
   /// Used when wants to handle states outside the build method, like navigate to another page on sucess, show a dilaog, full loading page, etc.
-  /// 
+  ///
   /// Call this method on the `initState`, and always remember to dispose it on dispose method.
   ///
   /// ```dart
