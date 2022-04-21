@@ -16,9 +16,13 @@ typedef _LoadingReactionCallback = void Function(bool loading);
 typedef _SuccessReactionCallback<T> = void Function(T data);
 typedef _ErrorReactionCallback<E> = void Function(E error);
 
+/// The 3 possibles states, `success`, `loading` and `error`.
 enum StateType { success, loading, error }
 
+/// Used when wants to set the success (T) and error (E) type.
 typedef DataStateCustom<T, E> = _DataStateCore<T, E>;
+
+/// Used when wants to set the success (T) type. The error will be `dynamic`.
 typedef DataState<T> = _DataStateCore<T, dynamic>;
 
 class _DataStateCore<T, E> extends _DataStateBase<T, E> with _$_DataStateCore {
@@ -28,7 +32,7 @@ class _DataStateCore<T, E> extends _DataStateBase<T, E> with _$_DataStateCore {
   /// - [DataState.startWithSuccess]
   /// - [DataState.startWithError]
   ///
-  /// Use the `DataStateCustom<T, E>` to define a error type.
+  /// Use the `DataStateCustom<T, E>` to define a error type too.
   _DataStateCore() : super(initialState: StateType.loading);
 
   /// Starts with `success` state.
@@ -56,6 +60,9 @@ abstract class _DataStateBase<T, E> with Store {
   @observable
   StateType _state;
 
+  /// The current state.
+  ///
+  /// Can be used with `Observer` widget.
   @computed
   StateType get state => _state;
 
