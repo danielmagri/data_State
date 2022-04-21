@@ -1,4 +1,4 @@
-import 'package:data_state/data_state.dart';
+import 'package:data_state_mobx/data_state.dart';
 import 'package:mobx/mobx.dart';
 
 part 'simple_controller.g.dart';

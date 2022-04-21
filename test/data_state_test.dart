@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:data_state_mobx/data_state.dart';
+import 'package:mobx/mobx.dart' as mobx;
 import 'test_widget_sample.dart';
 
 void main() {
@@ -606,6 +607,38 @@ void main() {
             .then((value) => dataState.setErrorState(error));
         await Future.delayed(delay)
             .then((value) => dataState.setLoadingState());
+
+        dispose();
+      });
+    });
+  });
+
+  group('Alternative test', () {
+    group('at the state getter', () {
+      test('reaction to success state', () async {
+        final dataState = DataState<String>();
+
+        final dispose =
+            mobx.reaction<StateType>((_) => dataState.state, (state) {
+          expect(state, StateType.success);
+        });
+
+        await Future.delayed(delay)
+            .then((value) => dataState.setSuccessState(''));
+
+        dispose();
+      });
+
+      test('reaction to error state', () async {
+        final dataState = DataState<String>();
+
+        final dispose =
+            mobx.reaction<StateType>((_) => dataState.state, (state) {
+          expect(state, StateType.success);
+        });
+
+        await Future.delayed(delay)
+            .then((value) => dataState.setErrorState(Error()));
 
         dispose();
       });

@@ -56,6 +56,7 @@ abstract class _DataStateBase<T, E> with Store {
   @observable
   StateType _state;
 
+  @computed
   StateType get state => _state;
 
   T? _data;

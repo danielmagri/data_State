@@ -1,4 +1,4 @@
-import 'package:data_state/data_state.dart';
+import 'package:data_state_mobx/data_state.dart';
 import 'dart:math' as math;
 import 'package:flutter/material.dart' show Color;
 import 'package:mobx/mobx.dart';

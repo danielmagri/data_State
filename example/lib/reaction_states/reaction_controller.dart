@@ -1,5 +1,5 @@
 import 'dart:math' as math;
-import 'package:data_state/data_state.dart';
+import 'package:data_state_mobx/data_state.dart';
 import 'package:mobx/mobx.dart';
 
 part 'reaction_controller.g.dart';
