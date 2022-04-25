@@ -1,3 +1,4 @@
+import 'package:example/login_sample/login_page.dart';
 import 'package:example/reaction_states/reaction_page.dart';
 import 'package:example/reloadable_states/reloadable_page.dart';
 import 'package:example/simple_states/simple_page.dart';
@@ -70,6 +71,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('States using reaction'),
+            ),
+            const SizedBox(height: 24),
+            const Text('Samples'),
+            const SizedBox(height: 8),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              },
+              child: const Text('Login'),
             ),
           ],
         ),

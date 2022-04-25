@@ -66,6 +66,18 @@ abstract class _DataStateBase<T, E> with Store {
   @computed
   StateType get state => _state;
 
+  /// An observable getter for when the state is `loading`.
+  @computed
+  bool get isLoading => _state == StateType.loading;
+
+  /// An observable getter for when the state is `success`.
+  @computed
+  bool get isSuccess => _state == StateType.success;
+
+  /// An observable getter for when the state is `error`.
+  @computed
+  bool get isError => _state == StateType.error;
+
   T? _data;
   T? get data => _data;
 
