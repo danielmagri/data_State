@@ -1,6 +1,6 @@
 name: data_state_mobx
 description: A powerful state machine for MobX management, which can be used in almost any application state.
-version: 0.0.3
+version: 0.1.0
 homepage: https://github.com/danielmagri/data_state
 
 environment:
